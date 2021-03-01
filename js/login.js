@@ -65,7 +65,6 @@ const registerFunction = e => {
     emailInput.value = '';
     passwordInput.value = '';
     formButton.innerHTML = 'Log in';
-    console.log(accounts);
     // email wrong
     }else{
         alert('Email should includes "@"')
