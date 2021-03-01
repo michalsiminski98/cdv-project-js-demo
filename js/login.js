@@ -9,12 +9,14 @@ const stockSite = document.querySelector('.stock');
 
 const accounts = [{id:10222, mail:'asd@asd', password:'asd'}]
 
+// initializing registration or logging in
 const formInit = (e) => {
     formButton.innerHTML === 'Log in' ?
     loginFunction(e) :
     registerFunction(e);
 };
 
+// for loginFunction
 const wrongLogin = () => {
     alert('Wrong email or password');
     emailInput.value = '';
@@ -29,6 +31,10 @@ const loginFunction = e => {
         if(accounts[accountId].password === passwordInput.value){
             stockSite.classList.toggle('visible');
             logInWrapper.classList.toggle('visible');
+            sessionStorage.setItem("user", `user${accounts[accountId].id}`);
+            sessionStorage.setItem("email", `${accounts[accountId].mail}`);
+            sessionStorage.setItem("password", `${accounts[accountId].password}`);
+            sessionStorage.setItem("wallet", `200`);
         }else{
             wrongLogin();
         }
