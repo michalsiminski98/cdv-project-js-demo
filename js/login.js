@@ -64,6 +64,7 @@ const registerFunction = e => {
     alert('Account created!');
     emailInput.value = '';
     passwordInput.value = '';
+    registerText.classList.toggle('registerActive');
     formButton.innerHTML = 'Log in';
     // email wrong
     }else{
