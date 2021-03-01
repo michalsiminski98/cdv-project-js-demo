@@ -7,7 +7,14 @@ const formButton = document.querySelector('.formWrapper__button');
 const logInWrapper = document.querySelector('.formWrapper');
 const stockSite = document.querySelector('.stock');
 
-const accounts = [{id:10222, mail:'asd@asd', password:'asd'}]
+// used while logging in
+const userStock = document.querySelector('.userData__name');
+const walletStock = document.querySelector('.userData__amount');
+const userProfile = document.querySelector('.userData__nameData');
+const emailProfile = document.querySelector('.userData__emailData');
+const walletProfile = document.querySelector('.userData__walletData');
+
+const accounts = [{id:10222, mail:'asd@asd', password:'asd', wallet: 100}]
 
 // initializing registration or logging in
 const formInit = (e) => {
@@ -34,7 +41,12 @@ const loginFunction = e => {
             sessionStorage.setItem("user", `user${accounts[accountId].id}`);
             sessionStorage.setItem("email", `${accounts[accountId].mail}`);
             sessionStorage.setItem("password", `${accounts[accountId].password}`);
-            sessionStorage.setItem("wallet", `200`);
+            sessionStorage.setItem("wallet", `${accounts[accountId].wallet}`);
+            userStock.innerHTML = sessionStorage.getItem("user");
+            walletStock.innerHTML = sessionStorage.getItem("wallet");
+            userProfile.innerHTML = sessionStorage.getItem("user");
+            emailProfile.innerHTML = sessionStorage.getItem("email");
+            walletProfile.innerHTML = sessionStorage.getItem("wallet");
         }else{
             wrongLogin();
         }
@@ -65,7 +77,7 @@ const registerFunction = e => {
         do{newId = Math.floor(Math.random() * 100000)}
         while(accounts.findIndex(user => user.id === newId) !== -1);
     // creating account
-    const newAccount = {id: newId, mail: newEmail, password:newPassword};
+    const newAccount = {id: newId, mail: newEmail, password:newPassword, wallet: 100};
     accounts.push(newAccount);
     alert('Account created!');
     emailInput.value = '';
