@@ -5,6 +5,7 @@
 }
 html {
   font-size: 62.5%;
+  overflow: hidden;
 }
 ::-webkit-scrollbar {
   width: 15px;
@@ -55,22 +56,52 @@ html {
   }
 }
 
-@keyframes blueSquareMove {
-  0% {
-    left: 30%;
-    top: 15%;
-  }
-  100% {
-    top: 65%;
+@media (max-width: 1024px) {
+  @keyframes violetSquareMove {
+    0% {
+      left: 30%;
+    }
+    100% {
+      left: 2%;
+    }
   }
 }
 
-@keyframes violetSquareMove {
-  0% {
-    left: 75%;
-    top: 45%;
+@media (max-width: 414px) {
+  @keyframes blueSquareMove {
+    0% {
+      left: 20%;
+      top: 15%;
+    }
+    100% {
+      top: 55%;
+    }
   }
-  100% {
-    left: 35%;
+  @keyframes violetSquareMove {
+    0% {
+      left: 10%;
+      top: 55%;
+    }
+    100% {
+      left: 10%;
+      top: 15%;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .wrapper {
+    &__circle {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  @keyframes blueSquareMove {
+    0% {
+      left: 5%;
+      top: 5%;
+    }
+    100% {
+      top: 50%;
+    }
   }
 }
