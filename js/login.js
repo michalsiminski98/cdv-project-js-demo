@@ -91,7 +91,8 @@ const registerFunction = e => {
 };
 
 // log in / register change
-const registerInit = () => {
+const registerInit = e => {
+  e.preventDefault();
     registerText.classList.toggle('registerActive');
     formButton.innerHTML === 'Log in' ?
     formButton.innerHTML = 'Register' : 

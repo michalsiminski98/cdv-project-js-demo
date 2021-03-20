@@ -78,8 +78,13 @@
     }
   }
 }
-// JS
 
+// JS
 .activePayment {
   background-image: $background;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
 }
