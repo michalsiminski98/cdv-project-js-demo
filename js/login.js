@@ -22,14 +22,12 @@ const formInit = (e) => {
     loginFunction(e) :
     registerFunction(e);
 };
-
 // for loginFunction
 const wrongLogin = () => {
     alert('Wrong email or password');
     emailInput.value = '';
     passwordInput.value = '';
 } ;
-
 // log in
 const loginFunction = e => {
     e.preventDefault();
